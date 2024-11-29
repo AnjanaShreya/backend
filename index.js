@@ -3,10 +3,14 @@ import { MongoClient, ObjectId } from "mongodb";
 import cors from "cors"
 
 const usr = encodeURIComponent("chslash01")
+// const pwd = encodeURIComponent("5MthYCg3py6a2Min")
 const pwd = encodeURIComponent("mongo12db")
-const uri = "mongodb://127.0.0.1:27017";
+
+// const uri = "mongodb://127.0.0.1:27017";
 // const uri = `mongodb+srv://${usr}:${pwd}@cluster0.p6lzz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 // const uri = 'mongodb+srv://chslash01:$mongo12db@cluster0.p6lzz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+//const uri = 'mongodb+srv://chslash01:0G1UOvpIK04G9z5I@cluster0.7tsjj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const uri = `mongodb+srv://${usr}:${pwd}@cluster0.7tsjj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 const client = new MongoClient(uri);
 const db = client.db("ecomm1");
 
