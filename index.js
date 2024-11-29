@@ -11,8 +11,16 @@ const pwd = encodeURIComponent("mongo12db")
 // const uri = 'mongodb+srv://chslash01:$mongo12db@cluster0.p6lzz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 //const uri = 'mongodb+srv://chslash01:0G1UOvpIK04G9z5I@cluster0.7tsjj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 const uri = `mongodb+srv://${usr}:${pwd}@cluster0.7tsjj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-const client = new MongoClient(uri);
+// const client = new MongoClient(uri);
+
+const client = new MongoClient(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000, // Timeout after 5 seconds if no connection
+});
+
 const db = client.db("ecomm1");
+
 
 const app = express();
 
